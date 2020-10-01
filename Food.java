@@ -8,28 +8,19 @@ public class Food {
     //Fields
     private String name;
     private int x, y, hpGiven;
-    private boolean isPoisonous;
-    public boolean setEaten;
+    private boolean eaten;
+  
     
     //constructor
-    public Food(String name, int x, int y, int hpGiven, boolean isPoisonous, boolean setEaten) {
+    public Food(String name, int x, int y, int hpGiven, boolean eaten) {
         this.name = name;
+        this.x = x;
+        this.y = y;
         this.hpGiven = hpGiven;
-        this.isPoisonous = isPoisonous;
-        this.setEaten = false;
+        this.eaten = false;
     }
     //methods
-    public void speak() {
-        if (this.isPoisonous == false) {
-        System.out.println("The "+this.name+" was eaten! "+hpGiven+" health points restored!");
-        }
-    }
-    
-    public void badSpeak() {
-        if (this.isPoisonous == true) {
-            System.out.println("The "+this.name+" was terrible! "+-(hpGiven)+" health points were removed!");
-        }
-    }
+   
     //accessors & setters    
     public String getName() {
         return name;
@@ -38,15 +29,16 @@ public class Food {
     public int getHpGiven(){
         return hpGiven;
     }
-    
-    public boolean getIsPoisonous() {
-        return isPoisonous;
-    }
    public int getX() {
        return y;
    }
-   
    public int getY() {
        return x;
+   }
+   public boolean isEaten() {
+       return eaten;
+   }
+   public void setEaten(boolean eaten) {
+       this.eaten = eaten;
    }
 }

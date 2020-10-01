@@ -15,16 +15,17 @@ public class Cave {
         this.size = (int) (Math.random()*9) + 8;
         //instantiate
         this.caveman = new Caveman("Unga", (int) (Math.random() * size), (int) (Math.random() * size));
-        this.food1 = new Food("Banana", 3, 10, 10,  false, false);
-        this.food2 = new Food("Mushroom", 4, 10, -10, true, false);
+        this.food1 = new Food("Banana", 3, 10, 10, false);
+        this.food2 = new Food("Mushroom", 4, 10, -10, false);
     }
     public String toString() {
         return "size: "+size;
     }
     
     public void cavemanVsFood(Food food) {
-        if (caveman.getX() == food.getX() && caveman.getY() == food.getY() ) {
-            
+        if (caveman.getX() == food.getX() && 
+            caveman.getY() == food.getY()) {
+            caveman.eat(food);
         }
     }
     
