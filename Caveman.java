@@ -22,7 +22,11 @@ public class Caveman {
     public void speak() {
         System.out.println("Ugh");
     }
-    
+    public void eat(Food comida) {
+        this.hp += comida.getHpGiven();
+        comida.setEaten(true);
+        System.out.println("Me eat"+comida.getName());
+    }
     public String toString() {
         return "x: "+x+", y: "+y;
     }
