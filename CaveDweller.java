@@ -19,6 +19,5 @@ public class CaveDweller {
             input = kboard.nextLine();
             cave.handleInput(input);
         }
-    }
-    
+    }   
 }

@@ -9,8 +9,6 @@ public class Food {
     private String name;
     private int x, y, hpGiven;
     private boolean eaten;
-  
-    
     //constructor
     public Food(String name, int x, int y, int hpGiven, boolean eaten) {
         this.name = name;
@@ -20,7 +18,6 @@ public class Food {
         this.eaten = false;
     }
     //methods
-   
     //accessors & setters    
     public String getName() {
         return name;
@@ -29,15 +26,19 @@ public class Food {
     public int getHpGiven(){
         return hpGiven;
     }
+    
    public int getX() {
        return y;
    }
+   
    public int getY() {
        return x;
    }
+   
    public boolean isEaten() {
        return eaten;
    }
+   
    public void setEaten(boolean eaten) {
        this.eaten = eaten;
    }

@@ -2,7 +2,7 @@ package cavedweller;
 
 /**
  *
- * @author 802189
+ * @author 802189 
  */
 public class Cave {
     //encapsulation
@@ -10,6 +10,8 @@ public class Cave {
     private Caveman caveman;
     private Food food1;
     private Food food2;
+    private Bat bat1;
+    private Bat bat2; 
     
     public Cave() {
         this.size = (int) (Math.random()*9) + 8;
@@ -17,7 +19,10 @@ public class Cave {
         this.caveman = new Caveman("Unga", (int) (Math.random() * size), (int) (Math.random() * size));
         this.food1 = new Food("Banana", 3, 10, 10, false);
         this.food2 = new Food("Mushroom", 4, 10, -10, false);
+        this.bat1 = new Bat((int) (Math.random() * size), (int) (Math.random() * size));
+        this.bat2 = new Bat((int) (Math.random() * size), (int) (Math.random() * size));
     }
+   
     public String toString() {
         return "size: "+size;
     }
