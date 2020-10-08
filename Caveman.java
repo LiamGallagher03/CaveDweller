@@ -27,6 +27,19 @@ public class Caveman {
         comida.setEaten(true);
         System.out.println("Me eat"+comida.getName());
     }
+    
+    public void pickUp(Key key) {
+        hasKey = true;
+        System.out.println("Key Received");
+    }
+    
+    public void open(Door door) {
+        if (hasKey == true) {
+            System.out.println("The caveman has escaped.");
+            System.exit(0);
+        }
+    }
+    
     public String toString() {
         return "x: "+x+", y: "+y;
     }

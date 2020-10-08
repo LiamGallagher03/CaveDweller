@@ -12,6 +12,8 @@ public class Cave {
     private Food food2;
     private Bat bat1;
     private Bat bat2; 
+    private Door door;
+    private Key key;
     
     public Cave() {
         this.size = (int) (Math.random()*9) + 8;
@@ -21,6 +23,8 @@ public class Cave {
         this.food2 = new Food("Mushroom", 4, 10, -10, false);
         this.bat1 = new Bat((int) (Math.random() * size), (int) (Math.random() * size));
         this.bat2 = new Bat((int) (Math.random() * size), (int) (Math.random() * size));
+        this.door = new Door((int) (Math.random() * size), (int) (Math.random() * size));
+        this.key = new Key((int) (Math.random() * size), (int) (Math.random() * size));
     }
    
     public String toString() {
@@ -31,6 +35,25 @@ public class Cave {
         if (caveman.getX() == food.getX() && 
             caveman.getY() == food.getY()) {
             caveman.eat(food);
+        }
+    }
+    public void cavemanVsKey (Key key) {
+        if (caveman.getX() == key.getX() &&
+           caveman.getY() == key.getY()) {
+                caveman.pickUp(key);
+        }
+    }
+    public void cavemanVsBat (Bat bat) {
+        if (caveman.getX() == bat.getX() &&
+                caveman.getY() == bat.getY()) {
+            bat.bite(caveman);
+        }
+    }
+ 
+    public void cavemanVsDoor (Door door) {
+        if (caveman.getX() == door.getX() &&
+                caveman.getY() == door.getY()) {
+            caveman.open(door);
         }
     }
     
@@ -57,5 +80,10 @@ public class Cave {
         
         System.out.println(caveman.toString());
         cavemanVsFood(food1);
+        cavemanVsFood(food2);
+        cavemanVsBat(bat1);
+        cavemanVsBat(bat2);
+        cavemanVsKey(key);
+        cavemanVsDoor(door);
     }
 }
